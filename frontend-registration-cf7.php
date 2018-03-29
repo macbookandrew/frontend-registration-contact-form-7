@@ -57,7 +57,7 @@ function cf7fr_admin_reg_additional_settings( $cf7 )
 {
 	
 	$post_id = sanitize_text_field($_GET['post']);
-	$tags = $cf7->form_scan_shortcode();
+	$tags = $cf7->scan_form_tags();
 	$enable = get_post_meta($post_id, "_cf7fr_enable_registration", true);
 	$cf7fru = get_post_meta($post_id, "_cf7fru_", true);
 	$cf7fre = get_post_meta($post_id, "_cf7fre_", true);
@@ -139,7 +139,7 @@ add_action('wpcf7_save_contact_form', 'cf7_save_reg_contact_form');
 
 function cf7_save_reg_contact_form( $cf7 ) {
 
-		$tags = $cf7->form_scan_shortcode();
+		$tags = $cf7->scan_form_tags();
 	
 		$post_id = sanitize_text_field($_POST['post']);
 		
