@@ -32,7 +32,7 @@ function create_user_from_registration($cfdata) {
 		    } elseif (isset($cfdata->posted_data)) {
 		        $formdata = $cfdata->posted_data;
 		    } 
-        $password = wp_generate_password( 12, false );
+        $password = wp_generate_password( 20, false );
         $email = $formdata["".$cf7fre.""];
         $name = $formdata["".$cf7fru.""];
         // Construct a username from the user's name
@@ -58,17 +58,13 @@ function create_user_from_registration($cfdata) {
                 'last_name' => end($name_parts),
                 'role' => $cf7frr
             );
-            $user_id = wp_insert_user( $userdata );
-            if ( !is_wp_error($user_id) ) {
-                // Email login details to user
-                $blogname = wp_specialchars_decode(get_option('blogname'), ENT_QUOTES);
-                $message = "Welcome! Your login details are as follows:" . "\r\n";
-                $message .= sprintf(__('Username: %s'), $username) . "\r\n";
-                $message .= sprintf(__('Password: %s'), $password) . "\r\n";
-                $message .= wp_login_url() . "\r\n";
-                wp_mail($email, sprintf(__('[%s] Your username and password'), $blogname), $message);
-	        }
-	        
+
+            // Use WP’s built-in email new user notification
+            add_action( 'user_register', function( $user_id ) {
+                wp_new_user_notification( $user_id, NULL, 'user' );
+            } );
+
+            $user_id = wp_insert_user( $userdata );	        
 	    }
 
 	}
