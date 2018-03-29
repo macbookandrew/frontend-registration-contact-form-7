@@ -79,14 +79,14 @@ function cf7fr_admin_reg_additional_settings( $cf7 )
 	$admin_cm_output .= "<div class='inside'>";
 	
 	$admin_cm_output .= "<div class='mail-field'>";
-	$admin_cm_output .= "<input name='enable' value='1' type='checkbox' $checked>";
-	$admin_cm_output .= "<label>Enable Registration on this form</label>";
+	$admin_cm_output .= "<input name='enable' id='enable' value='1' type='checkbox' $checked>";
+	$admin_cm_output .= "<label for='enable'>Enable Registration on this form</label>";
 	$admin_cm_output .= "</div>";
 
 	$admin_cm_output .= "<br />";
 	$admin_cm_output .= "<div class='mail-field'>";
-	$admin_cm_output .= "<input name='enablemail' value='' type='checkbox' $checkedmail>";
-	$admin_cm_output .= "<label>Skip Contact Form 7 Mails ?</label>";
+	$admin_cm_output .= "<input name='enablemail' id='enablemail' value='' type='checkbox' $checkedmail>";
+	$admin_cm_output .= "<label for='enablemail'>Skip Contact Form 7 emails?</label>";
 	$admin_cm_output .= "</div>";
 
 	$admin_cm_output .= "<br /><table>";
