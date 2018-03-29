@@ -3,7 +3,7 @@
  * Plugin Name: Frontend Registration - Contact Form 7
  * Plugin URL: http://www.wpbuilderweb.com/frontend-registration-contact-form-7/
  * Description:  This plugin will convert your Contact form 7 in to registration form for WordPress. PRO Plugin available now with New Features. <strong>PRO Version is also available with New Features.</strong>. 
- * Version: 3.0
+ * Version: 3.1
  * Author: David Pokorny
  * Author URI: http://www.wpbuilderweb.com
  * Developer: Pokorny David
